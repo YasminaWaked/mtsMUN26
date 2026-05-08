@@ -9,28 +9,6 @@ function cn(...classes) {
   return classes.filter(Boolean).join(' ');
 }
 
-const RotatingText = forwardRef((props, ref) => {
-  const {
-    texts,
-    transition = { type: 'spring', damping: 25, stiffness: 300 },
-    initial = { y: '100%', opacity: 0 },
-    animate = { y: 0, opacity: 1 },
-    exit = { y: '-120%', opacity: 0 },
-    animatePresenceMode = 'wait',
-    animatePresenceInitial = false,
-    rotationInterval = 2000,
-    staggerDuration = 0,
-    staggerFrom = 'first',
-    loop = true,
-    auto = true,
-    splitBy = 'characters',
-    onNext,
-    mainClassName,
-    splitLevelClassName,
-    elementLevelClassName,
-    ...rest
-  } = props;
-
   const [currentTextIndex, setCurrentTextIndex] = useState(0);
 
   const splitIntoCharacters = text => {
@@ -182,7 +160,6 @@ const RotatingText = forwardRef((props, ref) => {
       </AnimatePresence>
     </motion.span>
   );
-});
 
 RotatingText.displayName = 'RotatingText';
 export default RotatingText;
