@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './mtsMUN26.css';
+import ScrollVelocity from './ScrollVelocity';
 
 interface TimerCharProps {
   char: string;
@@ -81,6 +82,16 @@ const Timer: React.FC = () => {
 const App: React.FC = () => {
   return (
     <div id="app">
+      <ScrollVelocity
+        texts={[
+          "MTS MUN 2026",
+          "DIPLOMACY",
+          "DEBATE",
+          "RESOLUTION"
+        ]}
+        velocity={3}
+      />
+
       <Timer />
     </div>
   );

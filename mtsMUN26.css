@@ -24,6 +24,8 @@ input, h1, a, span {
   height: 100vh;
   justify-content: center;
   width: 100vw;
+  flex-direction: column;
+  gap: 60px;
 }
 
 #timer {
@@ -85,4 +87,24 @@ input, h1, a, span {
   .timer-char.colon { font-size: 4em; line-height: 80px; }
   .timer-char-slider-option { font-size: 2em; height: 80px; line-height: 80px; width: 40px; }
   .timer-char-slider-option.active { font-size: 4em; }
+}
+
+.scroll-container {
+  width: 100vw;
+  overflow: hidden;
+  white-space: nowrap;
+  position: relative;
+}
+
+.scroll-track {
+  display: flex;
+  gap: 3rem;
+  width: max-content;
+}
+
+.scroll-text {
+  color: white;
+  font-size: 3rem;
+  font-weight: 700;
+  flex-shrink: 0;
 }

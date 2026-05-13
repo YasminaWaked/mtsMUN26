@@ -1,9 +1,6 @@
 'use client';
 
 import { forwardRef, useCallback, useEffect, useImperativeHandle, useMemo, useState } from 'react';
-import { motion, AnimatePresence } from 'motion/react';
-
-import './RotatingText.css';
 
 function cn(...classes) {
   return classes.filter(Boolean).join(' ');
@@ -160,6 +157,3 @@ function cn(...classes) {
       </AnimatePresence>
     </motion.span>
   );
-
-RotatingText.displayName = 'RotatingText';
-export default RotatingText;
