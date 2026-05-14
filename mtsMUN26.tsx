@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './mtsMUN26.css';
 import ScrollVelocity from './ScrollVelocity';
+import ScrollReveal from './scrollReveal';
 
 interface TimerCharProps {
   char: string;
@@ -78,7 +79,7 @@ const Timer: React.FC = () => {
   );
 };
 
-// THE MISSING PART: The App component
+//APP
 const App: React.FC = () => {
   return (
     <div id="app">
@@ -98,10 +99,20 @@ const App: React.FC = () => {
           "DEBATE",
           "RESOLUTION"
         ]}
-        velocity={-3}
+        velocity={-2}
       />
-
       <Timer />
+
+      <ScrollReveal
+        baseOpacity={0.15}
+        enableBlur={true}
+        baseRotation={3}
+      >
+        MTSMUN is where future leaders learn diplomacy,
+        negotiation, and global collaboration.
+      </ScrollReveal>
+
+
     </div>
   );
 }
