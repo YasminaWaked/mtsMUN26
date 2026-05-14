@@ -91,6 +91,15 @@ const App: React.FC = () => {
         ]}
         velocity={3}
       />
+      <ScrollVelocity
+        texts={[
+          "MTS MUN 2026",
+          "DIPLOMACY",
+          "DEBATE",
+          "RESOLUTION"
+        ]}
+        velocity={-3}
+      />
 
       <Timer />
     </div>
