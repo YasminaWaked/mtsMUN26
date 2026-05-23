@@ -1,0 +1,33 @@
+.fill-text-section {
+    width: 100%;
+    padding: 0 4vw;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .fill-text {
+    --fill-percent: 0%;
+    margin: 0;
+    font-size: clamp(4rem, 8vw, 10rem);
+    line-height: 0.95;
+    font-weight: 800;
+  
+    color: transparent;
+  
+    -webkit-text-stroke: 2px white;
+  
+    background: linear-gradient(
+      to right,
+      white var(--fill-percent),
+      transparent var(--fill-percent)
+    );
+  
+    background-clip: text;
+    -webkit-background-clip: text;
+    width: fit-content;
+    max-width: min(1600px, 100%);
+    margin-inline: auto;
+    text-align: center;
+    display: block;
+  }

@@ -4,6 +4,7 @@ import './mtsMUN26.css';
 import ScrollVelocity from './ScrollVelocity';
 import ScrollReveal from './scrollReveal';
 import StaggeredMenu from './menu';
+import FillTextScroll from './FillTextScroll';
 
 const menuItems = [
   { label: 'Home', ariaLabel: 'Go to home page', link: '/' },
@@ -141,6 +142,9 @@ const App: React.FC = () => {
         negotiation, and global collaboration.
       </ScrollReveal>
 
+      <FillTextScroll
+  text="Meet our Scretariat"
+/>
 
     </div>
   );

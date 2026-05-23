@@ -19,6 +19,7 @@ body {
   width: 100vw;
   flex-direction: column;
   gap: 120px;
+  padding-top: 120px;
 }
 
 #timer {
