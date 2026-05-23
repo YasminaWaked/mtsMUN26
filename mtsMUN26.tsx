@@ -3,6 +3,20 @@ import ReactDOM from 'react-dom/client';
 import './mtsMUN26.css';
 import ScrollVelocity from './ScrollVelocity';
 import ScrollReveal from './scrollReveal';
+import StaggeredMenu from './menu';
+
+const menuItems = [
+  { label: 'Home', ariaLabel: 'Go to home page', link: '/' },
+  { label: 'About', ariaLabel: 'Learn about us', link: '/about' },
+  { label: 'Services', ariaLabel: 'View our services', link: '/services' },
+  { label: 'Contact', ariaLabel: 'Get in touch', link: '/contact' }
+];
+
+const socialItems = [
+  { label: 'Twitter', link: 'https://twitter.com' },
+  { label: 'GitHub', link: 'https://github.com' },
+  { label: 'LinkedIn', link: 'https://linkedin.com' }
+];
 
 interface TimerCharProps {
   char: string;
@@ -83,6 +97,20 @@ const Timer: React.FC = () => {
 const App: React.FC = () => {
   return (
     <div id="app">
+      <StaggeredMenu
+    position= "right"
+    items={menuItems}
+    socialItems={socialItems}
+    displaySocials
+    displayItemNumbering={true}
+    menuButtonColor="#ffffff"
+    openMenuButtonColor="#000000"
+    changeMenuColorOnOpen={true}
+    colors={['#B497CF', '#5227FF']}
+    accentColor="#5227FF"
+    onMenuOpen={() => console.log('Menu opened')}
+    onMenuClose={() => console.log('Menu closed')}
+        />
       <ScrollVelocity
         texts={[
           "MTS MUN 2026",
@@ -90,7 +118,7 @@ const App: React.FC = () => {
           "DEBATE",
           "RESOLUTION"
         ]}
-        velocity={3}
+        velocity={1}
       />
       <ScrollVelocity
         texts={[
@@ -99,7 +127,7 @@ const App: React.FC = () => {
           "DEBATE",
           "RESOLUTION"
         ]}
-        velocity={-2}
+        velocity={-1}
       />
       <Timer />
 
