@@ -5,6 +5,7 @@ import ScrollVelocity from './ScrollVelocity';
 import ScrollReveal from './scrollReveal';
 import StaggeredMenu from './menu';
 import FillTextScroll from './FillTextScroll';
+import LineWaves from './lineWaves';
 
 const menuItems = [
   { label: 'Home', ariaLabel: 'Go to home page', link: '/' },
@@ -98,7 +99,23 @@ const Timer: React.FC = () => {
 //APP
 const App: React.FC = () => {
   return (
-    <div id="app">
+    <div id="app">  
+  <LineWaves
+    speed={0.3}
+    innerLineCount={14}
+    outerLineCount={31}
+    warpIntensity={0.2}
+    rotation={-34}
+    edgeFadeWidth={0.1}
+    colorCycleSpeed={0.6}
+    brightness={0.4}
+    color1="#101ba3"
+    color2="#040572"
+    color3="#144397"
+    enableMouseInteraction
+    mouseInfluence={2}
+  />
+
       <StaggeredMenu
     position= "right"
     items={menuItems}
