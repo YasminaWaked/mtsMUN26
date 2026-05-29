@@ -6,6 +6,8 @@ import ScrollReveal from './scrollReveal';
 import StaggeredMenu from './menu';
 import FillTextScroll from './FillTextScroll';
 import LineWaves from './lineWaves';
+import CircularGallery from './CircularGallery'
+
 
 const menuItems = [
   { label: 'Home', ariaLabel: 'Go to home page', link: '/' },
@@ -162,6 +164,16 @@ const App: React.FC = () => {
       <FillTextScroll
   text="Meet our Scretariat"
 />
+
+    <div style={{ height: '700px', width: '100%', position: 'relative' }}>
+    <CircularGallery
+      bend={1}
+      textColor="#ffffff"
+      borderRadius={0.05}
+      scrollSpeed={1.4}
+      scrollEase={0.08}
+/>
+    </div>
 
     </div>
   );
