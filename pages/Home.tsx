@@ -10,10 +10,10 @@ import CircularGallery from '../CircularGallery'
 
 
 const menuItems = [
-  { label: 'Home', ariaLabel: 'Go to home page', link: '/' },
-  { label: 'Register', ariaLabel: 'Register now!', link: '/register' },
-  { label: 'Committees', ariaLabel: 'Learn about our committees', link: '/committees' },
-  { label: 'Gallery', ariaLabel: 'All of our photos!!', link: '/gallery' }
+    { label: 'Home', ariaLabel: 'Go to home page', link: '/' },
+    { label: 'Register', ariaLabel: 'Register now!', link: '/register' },
+    { label: 'Committees', ariaLabel: 'Learn about our committees', link: '/committees' },
+    { label: 'Gallery', ariaLabel: 'All of our photos!!', link: '/gallery' }
 ];
 
 const socialItems = [
@@ -99,58 +99,66 @@ const Timer: React.FC = () => {
 
 const Home: React.FC = () => {
   return (
-    <div id="app">  
-  <LineWaves
+    <div id="app">
+      <div id='first-section'>
+      <LineWaves
     speed={0.3}
     innerLineCount={14}
-    outerLineCount={31}
+    outerLineCount={30}
     warpIntensity={0.2}
     rotation={-34}
     edgeFadeWidth={0.1}
     colorCycleSpeed={0.6}
     brightness={0.4}
-    color1="#101ba3"
-    color2="#040572"
-    color3="#144397"
+    color1="#011757"
+    color2="#011757"
+    color3="#011757"
     enableMouseInteraction
-    mouseInfluence={2}
+    mouseInfluence={3}
   />
+        <div className='hero-content'>
+          <StaggeredMenu
+        position= "right"
+        items={menuItems}
+        socialItems={socialItems}
+        displaySocials
+        displayItemNumbering={true}
+        menuButtonColor="#ffffff"
+        openMenuButtonColor="#000000"
+        changeMenuColorOnOpen={true}
+        colors={['#B497CF', '#5227FF']}
+        accentColor="#5227FF"
+        onMenuOpen={() => console.log('Menu opened')}
+        onMenuClose={() => console.log('Menu closed')}
+            />
+            <div className='velocity-group'>
+            <ScrollVelocity
+            texts={[
+              "MTS MUN 2026",
+              "DIPLOMACY",
+              "DEBATE",
+              "RESOLUTION"
+            ]}
+            velocity={1}
+          />
+          <ScrollVelocity
+            texts={[
+              "MTS MUN 2026",
+              "DIPLOMACY",
+              "DEBATE",
+              "RESOLUTION"
+            ]}
+            velocity={-1}
+          />
+            </div>
+          
+          <Timer />
 
-      <StaggeredMenu
-    position= "right"
-    items={menuItems}
-    socialItems={socialItems}
-    displaySocials
-    displayItemNumbering={true}
-    menuButtonColor="#ffffff"
-    openMenuButtonColor="#000000"
-    changeMenuColorOnOpen={true}
-    colors={['#B497CF', '#5227FF']}
-    accentColor="#5227FF"
-    onMenuOpen={() => console.log('Menu opened')}
-    onMenuClose={() => console.log('Menu closed')}
-        />
-      <ScrollVelocity
-        texts={[
-          "MTS MUN 2026",
-          "DIPLOMACY",
-          "DEBATE",
-          "RESOLUTION"
-        ]}
-        velocity={1}
-      />
-      <ScrollVelocity
-        texts={[
-          "MTS MUN 2026",
-          "DIPLOMACY",
-          "DEBATE",
-          "RESOLUTION"
-        ]}
-        velocity={-1}
-      />
-      <Timer />
+        </div>
+      </div>  
 
-      <ScrollReveal
+<div className='blue-section'>
+<ScrollReveal
         baseOpacity={0.15}
         enableBlur={true}
         baseRotation={3}
@@ -172,6 +180,7 @@ const Home: React.FC = () => {
       scrollEase={0.08}
 />
     </div>
+</div>
 
     </div>
   );
