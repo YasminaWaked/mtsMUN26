@@ -1,5 +1,6 @@
 import React, { useCallback, useLayoutEffect, useRef, useState } from 'react';
 import { gsap } from 'gsap';
+import { Link } from 'react-router-dom';
 import './mtsMUN26.css';
 
 export interface StaggeredMenuItem {
@@ -434,9 +435,15 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
             {items && items.length ? (
               items.map((it, idx) => (
                 <li className="sm-panel-itemWrap" key={it.label + idx}>
-                  <a className="sm-panel-item" href={it.link} aria-label={it.ariaLabel} data-index={idx + 1}>
-                    <span className="sm-panel-itemLabel">{it.label}</span>
-                  </a>
+                  <Link
+                      className="sm-panel-item"
+                      to={it.link}
+                      aria-label={it.ariaLabel}
+                      data-index={idx + 1}
+                      onClick={closeMenu}
+                    >
+                      <span className="sm-panel-itemLabel">{it.label}</span>
+                </Link>
                 </li>
               ))
             ) : (

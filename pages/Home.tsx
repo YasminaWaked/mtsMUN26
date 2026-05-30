@@ -1,19 +1,18 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './mtsMUN26.css';
-import ScrollVelocity from './ScrollVelocity';
-import ScrollReveal from './scrollReveal';
-import StaggeredMenu from './menu';
-import FillTextScroll from './FillTextScroll';
-import LineWaves from './lineWaves';
-import CircularGallery from './CircularGallery'
+import '../mtsMUN26.css';
+import ScrollVelocity from '../ScrollVelocity';
+import ScrollReveal from '../scrollReveal';
+import StaggeredMenu from '../menu';
+import FillTextScroll from '../FillTextScroll';
+import LineWaves from '../lineWaves';
+import CircularGallery from '../CircularGallery'
 
 
 const menuItems = [
   { label: 'Home', ariaLabel: 'Go to home page', link: '/' },
   { label: 'Register', ariaLabel: 'Register now!', link: '/register' },
   { label: 'Committees', ariaLabel: 'Learn about our committees', link: '/committees' },
-  { label: 'Resources', ariaLabel: 'Resources for the conference', link: '/resources' },
   { label: 'Gallery', ariaLabel: 'All of our photos!!', link: '/gallery' }
 ];
 
@@ -98,8 +97,7 @@ const Timer: React.FC = () => {
   );
 };
 
-//APP
-const App: React.FC = () => {
+const Home: React.FC = () => {
   return (
     <div id="app">  
   <LineWaves
@@ -179,8 +177,4 @@ const App: React.FC = () => {
   );
 }
 
-const rootElement = document.getElementById("root");
-if (rootElement) {
-  const root = ReactDOM.createRoot(rootElement);
-  root.render(<App />);
-}
+export default Home;

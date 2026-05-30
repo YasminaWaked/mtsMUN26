@@ -17,6 +17,8 @@ const useMedia = (queries: string[], values: number[], defaultValue: number): nu
   return value;
 };
 
+const gap = 16;
+
 const useMeasure = <T extends HTMLElement>() => {
   const ref = useRef<T | null>(null);
   const [size, setSize] = useState({ width: 0, height: 0 });
@@ -135,15 +137,14 @@ const Masonry: React.FC<MasonryProps> = ({
     if (!width) return [];
 
     const colHeights = new Array(columns).fill(0);
-    const columnWidth = width / columns;
+    const columnWidth = (width - gap * (columns - 1)) / columns;
 
     return items.map(child => {
       const col = colHeights.indexOf(Math.min(...colHeights));
-      const x = columnWidth * col;
+      const x = col * (columnWidth + gap);
       const height = child.height / 2;
       const y = colHeights[col];
-
-      colHeights[col] += height;
+      colHeights[col] += height + gap;
 
       return { ...child, x, y, w: columnWidth, h: height };
     });
@@ -240,6 +241,15 @@ const Masonry: React.FC<MasonryProps> = ({
       }
     }
   };
+
+  const totalHeight =
+  grid.length > 0
+    ? Math.max(...grid.map(item => item.y + item.h))
+    : 0;
+
+    console.log("width:", width);
+    console.log("items:", items);
+    console.log("grid:", grid);
 
   return (
     <div ref={containerRef} className="list">
