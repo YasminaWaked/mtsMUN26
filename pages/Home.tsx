@@ -10,6 +10,8 @@ import CircularGallery from '../Elements/CircularGallery'
 import ChairButton from '../Elements/chairButton'
 import DelegateButton from '../Elements/delegateButton'
 import ScrollFloat from '../Elements/scrollFloat';
+import RotatingText from '../Elements/RotatingText'
+import { motion } from "framer-motion";
 
 
 const menuItems = [
@@ -105,55 +107,55 @@ const Home: React.FC = () => {
   return (
     <div id="app">
       <div id='first-section'>
-      <LineWaves
-    speed={0.3}
-    innerLineCount={14}
-    outerLineCount={30}
-    warpIntensity={0.2}
-    rotation={-34}
-    edgeFadeWidth={0.1}
-    colorCycleSpeed={0.6}
-    brightness={0.4}
-    color1="#011757"
-    color2="#011757"
-    color3="#011757"
-    enableMouseInteraction
-    mouseInfluence={3}
-  />
+        <LineWaves
+          speed={0.3}
+          innerLineCount={14}
+          outerLineCount={30}
+          warpIntensity={0.2}
+          rotation={-34}
+          edgeFadeWidth={0.1}
+          colorCycleSpeed={0.6}
+          brightness={0.4}
+          color1="#011757"
+          color2="#011757"
+          color3="#011757"
+          enableMouseInteraction
+          mouseInfluence={3}
+        />
         <div className='hero-content'>
           <StaggeredMenu
-        position= "right"
-        items={menuItems}
-        socialItems={socialItems}
-        displaySocials
-        displayItemNumbering={true}
-        menuButtonColor="#ffffff"
-        openMenuButtonColor="#000000"
-        changeMenuColorOnOpen={true}
-        colors={['#B497CF', '#5227FF']}
-        accentColor="#5227FF"
-        onMenuOpen={() => console.log('Menu opened')}
-        onMenuClose={() => console.log('Menu closed')}
-            />
+            position= "right"
+            items={menuItems}
+            socialItems={socialItems}
+            displaySocials
+            displayItemNumbering={true}
+            menuButtonColor="#ffffff"
+            openMenuButtonColor="#000000"
+            changeMenuColorOnOpen={true}
+            colors={['#B497CF', '#5227FF']}
+            accentColor="#5227FF"
+            onMenuOpen={() => console.log('Menu opened')}
+            onMenuClose={() => console.log('Menu closed')}
+          />
             <div className='velocity-group'>
+              <ScrollVelocity
+              texts={[
+                "MTS MUN 2026",
+                "DIPLOMACY",
+                "DEBATE",
+                "RESOLUTION"
+              ]}
+              velocity={1}
+              />
             <ScrollVelocity
-            texts={[
-              "MTS MUN 2026",
-              "DIPLOMACY",
-              "DEBATE",
-              "RESOLUTION"
-            ]}
-            velocity={1}
-          />
-          <ScrollVelocity
-            texts={[
-              "MTS MUN 2026",
-              "DIPLOMACY",
-              "DEBATE",
-              "RESOLUTION"
-            ]}
-            velocity={-1}
-          />
+              texts={[
+                "MTS MUN 2026",
+                "DIPLOMACY",
+                "DEBATE",
+                "RESOLUTION"
+              ]}
+              velocity={-1}
+              />
             </div>
           
           <Timer />
@@ -164,19 +166,40 @@ const Home: React.FC = () => {
         </div>
       </div>  
 
-<div className='blue-section'>
-<ScrollFloat
-  animationDuration={1}
-  ease='back.inOut(2)'
-  scrollStart='center bottom+=50%'
-  scrollEnd='bottom bottom-=40%'
-  stagger={0.03}
->
-  Theme of 2026
-</ScrollFloat>
-      <FillTextScroll
-  text="Meet our Scretariat"
-/>
+    <div className='blue-section'>
+      <ScrollFloat
+        animationDuration={1}
+        ease='back.inOut(2)'
+        scrollStart='center bottom+=50%'
+        scrollEnd='bottom bottom-=40%'
+        stagger={0.03}
+      >
+        Theme of 2026
+      </ScrollFloat>
+      
+      <h1 className="full-rotatingText">
+  Future{" "}
+  <span className="rotating-pill">
+    <RotatingText
+      texts={["thinking", "leadership", "diplomacy"]}
+      staggerFrom="last"
+      initial={{ y: "100%" }}
+      animate={{ y: 0 }}
+      exit={{ y: "-120%" }}
+      staggerDuration={0.025}
+      splitLevelClassName="overflow-hidden"
+      transition={{ type: "spring", damping: 30, stiffness: 400 }}
+      rotationInterval={2000}
+      splitBy="characters"
+      auto
+      loop
+    />
+  </span>
+</h1>
+
+          <FillTextScroll
+      text="Meet our Scretariat"
+    />
 
     <div style={{ height: '700px', width: '100%', position: 'relative' }}>
     <CircularGallery
