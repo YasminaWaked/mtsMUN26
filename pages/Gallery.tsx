@@ -4,7 +4,8 @@ import Masonry from '../Masonry';
 
 const menuItems = [
     { label: 'Home', ariaLabel: 'Go to home page', link: '/' },
-    { label: 'Register', ariaLabel: 'Register now!', link: '/register' },
+    { label: 'Chair Registration', ariaLabel: 'Register now!', link: '/chair-registration' },
+    { label: 'Delegate Registration', ariaLabel: 'Register now!', link: '/delegate-registration' },
     { label: 'Committees', ariaLabel: 'Learn about our committees', link: '/committees' },
     { label: 'Gallery', ariaLabel: 'All of our photos!!', link: '/gallery' }
   ];

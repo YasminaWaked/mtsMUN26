@@ -7,13 +7,16 @@ import StaggeredMenu from '../menu';
 import FillTextScroll from '../FillTextScroll';
 import LineWaves from '../lineWaves';
 import CircularGallery from '../CircularGallery'
+import ChairButton from '../chairButton'
+import DelegateButton from '../delegateButton'
 
 
 const menuItems = [
-    { label: 'Home', ariaLabel: 'Go to home page', link: '/' },
-    { label: 'Register', ariaLabel: 'Register now!', link: '/register' },
-    { label: 'Committees', ariaLabel: 'Learn about our committees', link: '/committees' },
-    { label: 'Gallery', ariaLabel: 'All of our photos!!', link: '/gallery' }
+  { label: 'Home', ariaLabel: 'Go to home page', link: '/' },
+  { label: 'Chair Registration', ariaLabel: 'Register now!', link: '/chair-registration' },
+  { label: 'Delegate Registration', ariaLabel: 'Register now!', link: '/delegate-registration' },
+  { label: 'Committees', ariaLabel: 'Learn about our committees', link: '/committees' },
+  { label: 'Gallery', ariaLabel: 'All of our photos!!', link: '/gallery' }
 ];
 
 const socialItems = [
@@ -153,7 +156,10 @@ const Home: React.FC = () => {
             </div>
           
           <Timer />
-
+          <div className='buttons'>
+            <ChairButton />
+            <DelegateButton />
+          </div>
         </div>
       </div>  
 

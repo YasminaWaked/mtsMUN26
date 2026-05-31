@@ -1,5 +1,3 @@
-@import url('https://googleapis.com');
-
 :root {
   --gray-30: rgb(30, 30, 30);
   --gray-90: rgb(90, 90, 90);
@@ -60,6 +58,11 @@ body {
 
   padding-top: 100px;
   padding-bottom: 100px;
+}
+
+.buttons {
+  display: flex;
+  gap: 90px;
 }
 
 .line-waves-container {
@@ -237,7 +240,7 @@ footer a:hover {
   width: 100vw;
   height: 100vh;
   z-index: 10050;
-  pointer-events: auto;
+  pointer-events: none;
 }
 .staggered-menu-wrapper.fixed-wrapper {
   position: fixed;
@@ -261,6 +264,12 @@ footer a:hover {
   width: 100%;
   z-index: 10060;
   pointer-events: none;
+}
+
+.staggered-menu-header,
+.sm-toggle,
+.staggered-menu-panel {
+  pointer-events: auto;
 }
 
 .staggered-menu-header > * {
