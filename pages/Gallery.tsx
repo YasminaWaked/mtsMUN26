@@ -1,6 +1,6 @@
 import React from 'react';
-import StaggeredMenu from '../menu';
-import Masonry from '../Masonry';
+import StaggeredMenu from '../Elements/menu';
+import Masonry from '../Elements/Masonry';
 
 const menuItems = [
     { label: 'Home', ariaLabel: 'Go to home page', link: '/' },

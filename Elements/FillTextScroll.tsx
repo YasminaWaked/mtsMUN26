@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from "react";
-import "./FillTextScroll.css";
+import "../CSS/FillTextScroll.css";
 
 interface FillTextScrollProps {
   text: string;

@@ -1,6 +1,6 @@
 import React from "react";
 import { FaGavel } from "react-icons/fa";
-import "./registerButton.css";
+import "../CSS/registerButton.css";
 
 const ChairButton: React.FC = () => {
   return (

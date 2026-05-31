@@ -1,5 +1,5 @@
 import React from 'react';
-import StaggeredMenu from '../menu';
+import StaggeredMenu from '../Elements/menu';
 
 const menuItems = [
     { label: 'Home', ariaLabel: 'Go to home page', link: '/' },

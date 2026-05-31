@@ -1,6 +1,6 @@
 import React from "react";
 import { BsPersonFillAdd } from "react-icons/bs";
-import "./registerButton.css";
+import "../CSS/registerButton.css";
 
 const DelegateButton: React.FC = () => {
   return (

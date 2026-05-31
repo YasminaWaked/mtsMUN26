@@ -1,14 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import '../mtsMUN26.css';
-import ScrollVelocity from '../ScrollVelocity';
-import ScrollReveal from '../scrollReveal';
-import StaggeredMenu from '../menu';
-import FillTextScroll from '../FillTextScroll';
-import LineWaves from '../lineWaves';
-import CircularGallery from '../CircularGallery'
-import ChairButton from '../chairButton'
-import DelegateButton from '../delegateButton'
+import '../CSS/mtsMUN26.css';
+import ScrollVelocity from '../Elements/ScrollVelocity';
+import ScrollReveal from '../Elements/scrollFloat';
+import StaggeredMenu from '../Elements/menu';
+import FillTextScroll from '../Elements/FillTextScroll';
+import LineWaves from '../Elements/lineWaves';
+import CircularGallery from '../Elements/CircularGallery'
+import ChairButton from '../Elements/chairButton'
+import DelegateButton from '../Elements/delegateButton'
+import ScrollFloat from '../Elements/scrollFloat';
 
 
 const menuItems = [
@@ -164,15 +165,15 @@ const Home: React.FC = () => {
       </div>  
 
 <div className='blue-section'>
-<ScrollReveal
-        baseOpacity={0.15}
-        enableBlur={true}
-        baseRotation={3}
-      >
-        MTSMUN is where future leaders learn diplomacy,
-        negotiation, and global collaboration.
-      </ScrollReveal>
-
+<ScrollFloat
+  animationDuration={1}
+  ease='back.inOut(2)'
+  scrollStart='center bottom+=50%'
+  scrollEnd='bottom bottom-=40%'
+  stagger={0.03}
+>
+  Theme of 2026
+</ScrollFloat>
       <FillTextScroll
   text="Meet our Scretariat"
 />

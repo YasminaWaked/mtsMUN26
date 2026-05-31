@@ -1,7 +1,7 @@
 import { Camera, Mesh, Plane, Program, Renderer, Texture, Transform } from 'ogl';
 import { useEffect, useRef } from 'react';
 
-import './mtsMUN26.css';
+import '../CSS/mtsMUN26.css';
 
 import type { OGLRenderingContext } from 'ogl';
 

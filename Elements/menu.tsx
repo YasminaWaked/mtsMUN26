@@ -1,7 +1,7 @@
 import React, { useCallback, useLayoutEffect, useRef, useState } from 'react';
 import { gsap } from 'gsap';
 import { Link } from 'react-router-dom';
-import './mtsMUN26.css';
+import '../CSS/mtsMUN26.css';
 
 export interface StaggeredMenuItem {
   label: string;
