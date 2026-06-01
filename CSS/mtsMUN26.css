@@ -4,7 +4,7 @@
 }
 
 body {
-  background-color: #011757;
+  background-color: black;
   margin: 0;
   overflow-x: hidden;
   overflow-y: auto;
@@ -15,8 +15,8 @@ body {
 
 #first-section {
   position: relative;
-  height: 100vh;
   min-height: 100vh;
+  height: auto;
   background: black;
   overflow: hidden;
   display: flex;
@@ -35,10 +35,12 @@ body {
 
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
 
-  gap: 100px; /* space between velocity group and timer */
+  justify-content: flex-start;
+  padding-top: 120px;
+
+  gap: 60px;
 }
 
 .velocity-group {

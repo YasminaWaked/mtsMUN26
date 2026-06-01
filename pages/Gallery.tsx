@@ -3,12 +3,10 @@ import StaggeredMenu from '../Elements/menu';
 import Masonry from '../Elements/Masonry';
 
 const menuItems = [
-    { label: 'Home', ariaLabel: 'Go to home page', link: '/' },
-    { label: 'Chair Registration', ariaLabel: 'Register now!', link: '/chair-registration' },
-    { label: 'Delegate Registration', ariaLabel: 'Register now!', link: '/delegate-registration' },
-    { label: 'Committees', ariaLabel: 'Learn about our committees', link: '/committees' },
-    { label: 'Gallery', ariaLabel: 'All of our photos!!', link: '/gallery' }
-  ];
+  { label: 'Home', ariaLabel: 'Go to home page', link: '/' },
+  { label: 'Committees', ariaLabel: 'Learn about our committees', link: '/committees' },
+  { label: 'Gallery', ariaLabel: 'All of our photos!!', link: '/gallery' }
+];
   
   const socialItems = [
     { label: 'Twitter', link: 'https://twitter.com' },

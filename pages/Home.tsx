@@ -12,12 +12,11 @@ import DelegateButton from '../Elements/delegateButton'
 import ScrollFloat from '../Elements/scrollFloat';
 import RotatingText from '../Elements/RotatingText'
 import { motion } from "framer-motion";
+import SpotlightCard from '../Elements/SpotlightCard';
 
 
 const menuItems = [
   { label: 'Home', ariaLabel: 'Go to home page', link: '/' },
-  { label: 'Chair Registration', ariaLabel: 'Register now!', link: '/chair-registration' },
-  { label: 'Delegate Registration', ariaLabel: 'Register now!', link: '/delegate-registration' },
   { label: 'Committees', ariaLabel: 'Learn about our committees', link: '/committees' },
   { label: 'Gallery', ariaLabel: 'All of our photos!!', link: '/gallery' }
 ];
@@ -137,6 +136,8 @@ const Home: React.FC = () => {
             onMenuOpen={() => console.log('Menu opened')}
             onMenuClose={() => console.log('Menu closed')}
           />
+          
+
             <div className='velocity-group'>
               <ScrollVelocity
               texts={[
@@ -157,6 +158,11 @@ const Home: React.FC = () => {
               velocity={-1}
               />
             </div>
+
+            <SpotlightCard className="custom-spotlight-card" spotlightColor="rgba(0, 229, 255, 0.2)">
+            <img className='card-img' src='MUN-logo.JPG'/>
+            <h1>MTS MUN</h1>
+          </SpotlightCard>
           
           <Timer />
           <div className='buttons'>
@@ -176,8 +182,22 @@ const Home: React.FC = () => {
       >
         Theme of 2026
       </ScrollFloat>
-      
-      <h1 className="full-rotatingText">
+
+          <FillTextScroll
+      text="Meet our Scretariat"
+    />
+
+    <div style={{ height: '700px', width: '100%', position: 'relative' }}>
+    <CircularGallery
+      bend={1}
+      textColor="#ffffff"
+      borderRadius={0.05}
+      scrollSpeed={1.4}
+      scrollEase={0.08}
+/>
+    </div>
+
+    <h1 className="full-rotatingText">
   Future{" "}
   <span className="rotating-pill">
     <RotatingText
@@ -197,19 +217,6 @@ const Home: React.FC = () => {
   </span>
 </h1>
 
-          <FillTextScroll
-      text="Meet our Scretariat"
-    />
-
-    <div style={{ height: '700px', width: '100%', position: 'relative' }}>
-    <CircularGallery
-      bend={1}
-      textColor="#ffffff"
-      borderRadius={0.05}
-      scrollSpeed={1.4}
-      scrollEase={0.08}
-/>
-    </div>
 </div>
 
     </div>
