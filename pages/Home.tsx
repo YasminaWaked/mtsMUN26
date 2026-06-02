@@ -9,6 +9,7 @@ import LineWaves from '../Elements/lineWaves';
 import CircularGallery from '../Elements/CircularGallery'
 import ChairButton from '../Elements/chairButton'
 import DelegateButton from '../Elements/delegateButton'
+import DelegationButton from '../Elements/delegationButton'
 import ScrollFloat from '../Elements/scrollFloat';
 import RotatingText from '../Elements/RotatingText'
 import { motion } from "framer-motion";
@@ -168,6 +169,7 @@ const Home: React.FC = () => {
           <div className='buttons'>
             <ChairButton />
             <DelegateButton />
+            <DelegationButton />
           </div>
         </div>
       </div>  

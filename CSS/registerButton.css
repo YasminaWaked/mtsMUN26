@@ -1,18 +1,26 @@
 .register-button {
     position: relative;
     text-align: center;
-    display: inline-flex;
+    display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 30px;
+    text-decoration: none;
+    margin-bottom: 50px;
     width: 180px;
     height: 64px;
+  }
   
+.register-button-inner {
+    width: 180px;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     border: 3px solid white;
     border-radius: 12px;
   
     color: white;
-    text-decoration: none;
+    position: relative;
     text-transform: uppercase;
     font-weight: 700;
     letter-spacing: 2px;
@@ -21,9 +29,9 @@
   
     transition:
       width 0.5s ease,
-      border-radius 0.4s ease;
-  }
-  
+      border-radius 0.5s ease;
+}
+
   .register-text {
     transition:
       opacity 0.3s ease,
@@ -42,7 +50,7 @@
       transform 0.3s ease;
   }
   
-  .register-button:hover {
+  .register-button:hover .register-button-inner{
     width: 64px;
     border-radius: 999px;
   }
