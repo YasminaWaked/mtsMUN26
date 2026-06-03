@@ -48,15 +48,19 @@ const SpotlightCard: React.FC<SpotlightCardProps> = ({
     };
   
     return (
-      <div
-        ref={divRef}
-        onMouseMove={handleMouseMove}
-        onMouseLeave={handleMouseLeave}
-        className={`card-spotlight ${className}`}
-      >
-        {children}
-      </div>
-    );
+        <div
+          className="spotlight-hitbox"
+          onMouseMove={handleMouseMove}
+          onMouseLeave={handleMouseLeave}
+        >
+          <div
+            ref={divRef}
+            className={`card-spotlight ${className}`}
+          >
+            {children}
+          </div>
+        </div>
+      );
   };
   
 export default SpotlightCard;

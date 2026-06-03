@@ -135,6 +135,7 @@ footer a:hover {
 }
 
 #timer {
+  margin-top: -50px;
   background: linear-gradient(to bottom right, #131E3A, #0F52BA);
   border-radius: 22px;
 }

@@ -110,10 +110,10 @@ const Home: React.FC = () => {
         <LineWaves
           speed={0.3}
           innerLineCount={14}
-          outerLineCount={30}
+          outerLineCount={40}
           warpIntensity={0.2}
           rotation={-34}
-          edgeFadeWidth={0.1}
+          edgeFadeWidth={0.3}
           colorCycleSpeed={0.6}
           brightness={0.4}
           color1="#011757"
@@ -139,7 +139,7 @@ const Home: React.FC = () => {
           />
           
 
-            <div className='velocity-group'>
+            <div className='velocity-group' style = {{marginBottom: '-50px'}}>
               <ScrollVelocity
               texts={[
                 "MTS MUN 2026",
