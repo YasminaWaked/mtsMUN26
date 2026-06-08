@@ -3,6 +3,7 @@ import StaggeredMenu from '../Elements/menu';
 import SpotlightCard from '../Elements/SpotlightCard';
 import CommitteeContent from '../Elements/CommitteeContent';
 import CommitteeReveal from '../Elements/CommitteeReveal';
+import Header from '../Elements/Header';
 
 import { committees, Committee } from '../data/committees';
 
@@ -27,6 +28,7 @@ console.log(Array.isArray(committees));
 
   return (
     <div>
+        <Header />
       <StaggeredMenu
         position="right"
         items={menuItems}
@@ -36,8 +38,8 @@ console.log(Array.isArray(committees));
         menuButtonColor="#ffffff"
         openMenuButtonColor="#000000"
         changeMenuColorOnOpen
-        colors={['#B497CF', '#5227FF']}
-        accentColor="#5227FF"
+        colors={['#0432ba', '#011757']}
+        accentColor="#0432ba"
       />
 
       <div className="cards">

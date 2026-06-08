@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import '../CSS/mtsMUN26.css';
+import Header from '../Elements/Header';
 import ScrollVelocity from '../Elements/ScrollVelocity';
 import ScrollReveal from '../Elements/scrollFloat';
 import StaggeredMenu from '../Elements/menu';
@@ -106,7 +107,8 @@ const Timer: React.FC = () => {
 const Home: React.FC = () => {
   return (
     <div id="app">
-      <div id='first-section'>
+    <Header />    
+    <div id='first-section'>
         <LineWaves
           speed={0.3}
           innerLineCount={14}

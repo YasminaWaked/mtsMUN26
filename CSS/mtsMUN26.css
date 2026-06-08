@@ -236,7 +236,7 @@ footer a:hover {
   left: 0;
   width: 100vw;
   height: 100vh;
-  z-index: 10050;
+  z-index: 20000;
   pointer-events: none;
 }
 .staggered-menu-wrapper.fixed-wrapper {
@@ -245,7 +245,7 @@ footer a:hover {
   left: 0;
   width: 100vw;
   height: 100vh;
-  z-index: 40;
+  z-index: 10001;
   overflow: hidden;
   pointer-events: none;
 }
@@ -253,14 +253,14 @@ footer a:hover {
 .staggered-menu-header {
   position: absolute;
   top: 0;
-  right: 0;
+  right: 2rem;
+  height: 80px;
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  padding: 2rem;
-  width: 100%;
-  z-index: 10060;
-  pointer-events: none;
+  z-index: 10;
+  width: auto;
+  padding: 0;
 }
 
 .staggered-menu-header,
@@ -297,7 +297,7 @@ footer a:hover {
   color: white;
   cursor: pointer;
   pointer-events: auto;
-  z-index: 10001;
+  z-index: 2;
 }
 
 .sm-toggle:focus-visible {
@@ -381,7 +381,7 @@ footer a:hover {
   flex-direction: column;
   padding: 6em 2em 2em 2em;
   overflow-y: auto;
-  z-index: 10040;
+  z-index: 5;
   pointer-events: auto;
   opacity: 0;
 }
@@ -398,7 +398,7 @@ footer a:hover {
   bottom: 0;
   width: clamp(260px, 38vw, 420px);
   pointer-events: none;
-  z-index: 10000;
+  z-index: 1;
   opacity: 0;
 }
 
@@ -415,6 +415,7 @@ footer a:hover {
   width: 100%;
   transform: translateX(0);
   opacity: 0;
+  z-index: 1;
 }
 
 .sm-panel-inner {

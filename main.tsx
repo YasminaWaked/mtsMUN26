@@ -5,6 +5,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
 import Committees from './pages/Committees';
 import Gallery from './pages/Gallery';
+import Header from './Elements/Header';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement

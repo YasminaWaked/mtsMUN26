@@ -1,6 +1,7 @@
 import React from 'react';
 import StaggeredMenu from '../Elements/menu';
 import Masonry from '../Elements/Masonry';
+import Header from '../Elements/Header';
 
 const menuItems = [
   { label: 'Home', ariaLabel: 'Go to home page', link: '/' },
@@ -44,6 +45,7 @@ const Gallery = () => {
           position: 'relative'
         }}
       >
+        <Header />
 <StaggeredMenu
     position= "right"
     items={menuItems}
@@ -53,12 +55,12 @@ const Gallery = () => {
     menuButtonColor="#ffffff"
     openMenuButtonColor="#000000"
     changeMenuColorOnOpen={true}
-    colors={['#B497CF', '#5227FF']}
-    accentColor="#5227FF"
+    colors={['#0432ba', '#011757']}
+    accentColor="#0432ba"
     onMenuOpen={() => console.log('Menu opened')}
     onMenuClose={() => console.log('Menu closed')}
         />
-
+<br></br>
         <Masonry
           items={items}
           ease="power1.out"
