@@ -35,7 +35,7 @@ export interface StaggeredMenuProps {
 
 export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
   position = 'right',
-  colors = ['#B497CF', '#5227FF'],
+  colors = ['#011757', '#0432ba'],
   items = [],
   socialItems = [],
   displaySocials = true,
@@ -45,7 +45,7 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
   menuButtonColor = '#fff',
   openMenuButtonColor = '#fff',
   changeMenuColorOnOpen = true,
-  accentColor = '#5227FF',
+  accentColor = '#0432ba',
   isFixed = false,
   closeOnClickAway = true,
   onMenuOpen,
@@ -394,7 +394,7 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
     >
       <div ref={preLayersRef} className="sm-prelayers" aria-hidden="true">
         {(() => {
-          const raw = colors && colors.length ? colors.slice(0, 4) : ['#1e1e22', '#35353c'];
+          const raw = colors && colors.length ? colors.slice(0, 4) : ['#0432ba', '#011757'];
           let arr = [...raw];
           if (arr.length >= 3) {
             const mid = Math.floor(arr.length / 2);

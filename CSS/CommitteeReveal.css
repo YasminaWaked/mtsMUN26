@@ -1,0 +1,98 @@
+.committee-overlay {
+  position: fixed;
+  inset: 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background: rgba(0,0,0,0.7);
+  z-index: 9999;
+}
+
+.committee-modal {
+  position: relative;
+
+  width: min(1200px, 90vw);
+  height: min(800px, 90vh);
+
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  border-radius: 24px;
+  background: #000;
+}
+
+.committee-content {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  color: white;
+}
+
+.door {
+  position: absolute;
+  top: 0;
+  width: 50%;
+  height: 100%;
+
+  background: #011757;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  color: white;
+}
+
+.left-door {
+  left: 0;
+  border-right: 2px solid white;
+}
+
+.right-door {
+  right: 0;
+  border-left: 2px solid white;
+}
+
+.door-content {
+  width: 80%;
+  text-align: center;
+
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.door-content h2 {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.door-content p {
+  line-height: 1.6;
+}
+
+.committee-close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: 10;
+}
+
+.close-button {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  border: none;
+  border-radius: 50%;
+  background: white;
+  color: black;
+  cursor: pointer;
+}

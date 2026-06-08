@@ -64,7 +64,7 @@ const TimerChar: React.FC<TimerCharProps> = (props: TimerCharProps) => {
 }
 
 const Timer: React.FC = () => {
-  const targetDate = new Date("November 15, 2026 09:00:00").getTime();
+  const targetDate = new Date("December 11, 2026 15:00:00").getTime();
   
   const [timeLeft, setTimeLeft] = React.useState(targetDate - Date.now());
 
@@ -132,8 +132,8 @@ const Home: React.FC = () => {
             menuButtonColor="#ffffff"
             openMenuButtonColor="#000000"
             changeMenuColorOnOpen={true}
-            colors={['#B497CF', '#5227FF']}
-            accentColor="#5227FF"
+            colors={['#0432ba', '#011757']}
+            accentColor="#0432ba"
             onMenuOpen={() => console.log('Menu opened')}
             onMenuClose={() => console.log('Menu closed')}
           />
@@ -176,6 +176,7 @@ const Home: React.FC = () => {
 
     <div className='blue-section'>
       <ScrollFloat
+        textClassName='theme1'
         animationDuration={1}
         ease='back.inOut(2)'
         scrollStart='center bottom+=50%'
@@ -184,9 +185,21 @@ const Home: React.FC = () => {
       >
         Theme of 2026
       </ScrollFloat>
+      
+      <ScrollFloat
+        textClassName='theme2'
+        animationDuration={1}
+        ease='back.inOut(2)'
+        scrollStart='center bottom+=50%'
+        scrollEnd='bottom bottom-=40%'
+        stagger={0.03}
+      >
+         Bridging the Global Divide: Diplomacy Shaping Tomorrow      
+      </ScrollFloat>
+
 
           <FillTextScroll
-      text="Meet our Scretariat"
+      text="Meet our Secretariat"
     />
 
     <div style={{ height: '700px', width: '100%', position: 'relative' }}>
@@ -200,10 +213,10 @@ const Home: React.FC = () => {
     </div>
 
     <h1 className="full-rotatingText">
-  Future{" "}
+   Shaping{" "}
   <span className="rotating-pill">
     <RotatingText
-      texts={["thinking", "leadership", "diplomacy"]}
+      texts={["tomorrow", "diplomacy", "progress", "sustainability"]}
       staggerFrom="last"
       initial={{ y: "100%" }}
       animate={{ y: 0 }}

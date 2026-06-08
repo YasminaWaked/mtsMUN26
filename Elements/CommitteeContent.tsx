@@ -1,5 +1,5 @@
 import React, { useRef } from 'react';
-import '../CSS/CommitteeContent.css'
+import '../CSS/CommitteeContent.css';
 
 interface CommiteeCardProps {
     committeeName: string;
@@ -7,7 +7,7 @@ interface CommiteeCardProps {
     category: 'beginner' | 'intermediate' | 'advanced';
     agenda1: string;
     agenda2: string;
-    learnMore: string;
+    onLearnMore: () => void;
 }
 
 const CommitteeContent: React.FC<CommiteeCardProps> = ({
@@ -16,7 +16,7 @@ const CommitteeContent: React.FC<CommiteeCardProps> = ({
     category,
     agenda1,
     agenda2,
-    learnMore 
+    onLearnMore
 
 }) => {
     return (
@@ -24,7 +24,6 @@ const CommitteeContent: React.FC<CommiteeCardProps> = ({
             <div className='committee-row'>
                 <img 
                     src={committeeLogo}
-                    alt={committeeName}
                 />
 
                 <p className={`committee-category ${category}`}>
@@ -45,9 +44,9 @@ const CommitteeContent: React.FC<CommiteeCardProps> = ({
                 <a href= ''>
                     Register
                 </a>
-                <a href={learnMore}>
+                <button onClick={onLearnMore}>
                     Learn More
-                </a>
+                </button>
             </div>
 
         </div>

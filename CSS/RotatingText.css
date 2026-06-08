@@ -38,7 +38,8 @@
   
 .rotating-pill {
   min-width: 11ch;
-  background: blueviolet;
+  background: white;
+  color: #011757;
   border-radius: 20px;
   display: inline-flex;
   justify-content: center;

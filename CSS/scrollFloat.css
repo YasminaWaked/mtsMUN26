@@ -1,11 +1,13 @@
 .scroll-float {
     overflow: hidden;
     color: white;
+    text-align: center;
+    width: 90%;
   }
   
   .scroll-float-text {
     display: inline-block;
-    font-size: clamp(1.6rem, 8vw, 10rem);
+    font-size: clamp(0.8rem, 4vw, 5rem);
     font-weight: 900;
     text-align: center;
     line-height: 1.5;
