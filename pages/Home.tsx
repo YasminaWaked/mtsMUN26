@@ -15,6 +15,7 @@ import ScrollFloat from '../Elements/scrollFloat';
 import RotatingText from '../Elements/RotatingText'
 import { motion } from "framer-motion";
 import SpotlightCard from '../Elements/SpotlightCard';
+import Silk from '../Elements/SilkBackground';
 
 
 const menuItems = [
@@ -109,21 +110,15 @@ const Home: React.FC = () => {
     <div id="app">
     <Header />    
     <div id='first-section'>
-        <LineWaves
-          speed={0.3}
-          innerLineCount={14}
-          outerLineCount={40}
-          warpIntensity={0.2}
-          rotation={-34}
-          edgeFadeWidth={0.3}
-          colorCycleSpeed={0.6}
-          brightness={0.4}
-          color1="#011757"
-          color2="#011757"
-          color3="#011757"
-          enableMouseInteraction
-          mouseInfluence={3}
-        />
+      <div className='silk-background'>
+      <Silk
+        speed={5}
+        scale={1}
+        color="#011757"
+        noiseIntensity={1.5}
+        rotation={0}
+      />
+      </div>
         <div className='hero-content'>
           <StaggeredMenu
             position= "right"

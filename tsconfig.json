@@ -11,8 +11,6 @@
     // Environment Settings
     // See also https://aka.ms/tsconfig/module
     "target": "esnext",
-    "types": ["react", "react-dom", "vite/client"],
-    "jsxImportSource": "react",
     // For nodejs:
     // "lib": ["esnext"],
     // "types": ["node"],
