@@ -112,7 +112,7 @@ const Home: React.FC = () => {
     <div id='first-section'>
       <div className='silk-background'>
       <Silk
-        speed={5}
+        speed={4}
         scale={1}
         color="#011757"
         noiseIntensity={1.5}
@@ -158,7 +158,7 @@ const Home: React.FC = () => {
             </div>
 
             <SpotlightCard className="custom-spotlight-card" spotlightColor="rgba(0, 229, 255, 0.2)">
-            <img className='card-img' src='MUN-logo.JPG'/>
+            <img className='card-img' src='MUN-logo.PNG'/>
             <h1>MTS MUN</h1>
           </SpotlightCard>
           

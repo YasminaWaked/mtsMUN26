@@ -80,8 +80,12 @@ void main() {
                                    0.02 * tOffset) +
                            sin(20.0 * (tex.x + tex.y - 0.1 * tOffset)));
 
-  vec4 col = vec4(uColor, 1.0) * vec4(pattern) - rnd / 15.0 * uNoiseIntensity;
-  col.a = 1.0;
+                           float light = smoothstep(0.2, 1.0, pattern);
+
+                           vec3 finalColor =
+                               mix(uColor * 0.15, uColor * 1.4, light);
+                           
+                           vec4 col = vec4(finalColor, 1.0);  col.a = 1.0;
   gl_FragColor = col;
 }
 `;
