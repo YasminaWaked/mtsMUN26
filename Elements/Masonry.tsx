@@ -57,7 +57,6 @@ interface Item {
   id: string;
   img: string;
   url: string;
-  height: number;
 }
 
 interface GridItem extends Item {
@@ -98,6 +97,7 @@ const Masonry: React.FC<MasonryProps> = ({
 
   const [containerRef, { width }] = useMeasure<HTMLDivElement>();
   const [imagesReady, setImagesReady] = useState(false);
+  const [imageSizes, setImageSizes] = useState<Record<string, number>>({});
 
   const getInitialPosition = (item: GridItem) => {
     const containerRect = containerRef.current?.getBoundingClientRect();
@@ -130,25 +130,64 @@ const Masonry: React.FC<MasonryProps> = ({
   };
 
   useEffect(() => {
-    preloadImages(items.map(i => i.img)).then(() => setImagesReady(true));
+    async function loadImages() {
+      const sizes: Record<string, number> = {};
+  
+      await Promise.all(
+        items.map(
+          item =>
+            new Promise<void>((resolve) => {
+              const img = new Image();
+  
+              img.src = item.img;
+  
+              img.onload = () => {
+                sizes[item.id] = img.naturalHeight / img.naturalWidth;
+                resolve();
+              };
+  
+              img.onerror = () => resolve();
+            })
+        )
+      );
+  
+      setImageSizes(sizes);
+      setImagesReady(true);
+    }
+  
+    loadImages();
   }, [items]);
 
   const grid = useMemo<GridItem[]>(() => {
-    if (!width) return [];
-
+    if (!width || !imagesReady) return [];
+  
     const colHeights = new Array(columns).fill(0);
-    const columnWidth = (width - gap * (columns - 1)) / columns;
-
+  
+    const columnWidth =
+      (width - gap * (columns - 1)) / columns;
+  
     return items.map(child => {
       const col = colHeights.indexOf(Math.min(...colHeights));
+  
+      const ratio = imageSizes[child.id] ?? 1;
+  
+      const height = columnWidth * ratio;
+  
       const x = col * (columnWidth + gap);
-      const height = child.height / 2;
+  
       const y = colHeights[col];
+  
       colHeights[col] += height + gap;
-
-      return { ...child, x, y, w: columnWidth, h: height };
+  
+      return {
+        ...child,
+        x,
+        y,
+        w: columnWidth,
+        h: height
+      };
     });
-  }, [columns, items, width]);
+  }, [columns, width, items, imageSizes, imagesReady]);
 
   const hasMounted = useRef(false);
 
@@ -252,7 +291,12 @@ const Masonry: React.FC<MasonryProps> = ({
     console.log("grid:", grid);
 
   return (
-    <div ref={containerRef} className="list">
+    <div ref={containerRef} style={{
+      position: 'relative',
+      width: '100%',
+      height: totalHeight,
+      minHeight: totalHeight
+    }}>
       {grid.map(item => {
         return (
           <div
@@ -263,7 +307,16 @@ const Masonry: React.FC<MasonryProps> = ({
             onMouseEnter={e => handleMouseEnter(e, item)}
             onMouseLeave={e => handleMouseLeave(e, item)}
           >
-            <div className="item-img" style={{ backgroundImage: `url(${item.img})` }}>
+            <div
+              className="item-img"
+              style={{
+                  backgroundImage: `url(${item.img})`,
+                  width: "100%",
+                  height: "100%",
+                  backgroundSize: "cover",
+                  backgroundPosition: "center"
+              }}
+            >
               {colorShiftOnHover && (
                 <div
                   className="color-overlay"
